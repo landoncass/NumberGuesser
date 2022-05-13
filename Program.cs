@@ -53,25 +53,29 @@ namespace NumberGuesser
             highNumber = Int32.Parse(Console.ReadLine());
 
             newGuess = (lowNumber + highNumber) / 2;
+            guessCounter = 0;
 
             PromptForString();
 
             while (userInput != "correct")
             {
-            PromptForString();
+            // PromptForString();
             if (userInput == "higher")
                 {
                     ComputeNewLowIfTooLow();
                     guessCounter = guessCounter + 1;
+                    PromptForString();
                 }
             else if (userInput == "lower")
                 {
                     ComputeNewHighIfTooHigh();
                     guessCounter = guessCounter + 1;
+                    PromptForString();
                 }
             else
                 {
-                    Console.WriteLine("Please ente r a valid answer: higher, lower, or correct.");
+                    Console.WriteLine("Please enter a valid answer: higher, lower, or correct.");
+                    PromptForString();
                 }
             }
             BragWhenCorrect();
