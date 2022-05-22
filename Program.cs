@@ -48,7 +48,7 @@ namespace NumberGuesser
         {
             ShowGreeting();
 
-            Console.WriteLine("Think of a number great than 1. Now tell me a number that's higher than the number you're thinking of. ");
+            Console.WriteLine("Think of a number greater than 1. Now tell me a number that's higher than the number you're thinking of. ");
 
             highNumber = Int32.Parse(Console.ReadLine());
 
@@ -59,20 +59,20 @@ namespace NumberGuesser
 
             while (userInput != "correct")
             {
-            // PromptForString();
-            if (userInput == "higher")
+                // PromptForString();
+                if (userInput == "higher")
                 {
                     ComputeNewLowIfTooLow();
                     guessCounter = guessCounter + 1;
                     PromptForString();
                 }
-            else if (userInput == "lower")
+                else if (userInput == "lower")
                 {
                     ComputeNewHighIfTooHigh();
                     guessCounter = guessCounter + 1;
                     PromptForString();
                 }
-            else
+                else
                 {
                     Console.WriteLine("Please enter a valid answer: higher, lower, or correct.");
                     PromptForString();
